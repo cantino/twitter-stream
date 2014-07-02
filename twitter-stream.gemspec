@@ -1,15 +1,15 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{twitter-stream}
+  s.name = %q{cantino-twitter-stream}
   s.version = "0.1.15"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Vladimir Kolesnikov"]
+  s.authors = ["Andrew Cantino", "Vladimir Kolesnikov"]
   s.date = %q{2012-04-10}
   s.description = %q{Simple Ruby client library for twitter streaming API. Uses EventMachine for connection handling. Adheres to twitter's reconnection guidline. JSON format only.}
-  s.summary = %q{Twitter realtime API client}
-  s.homepage = %q{http://github.com/voloko/twitter-stream}
+  s.summary = %q{Twitter realtime API client- updated to use nerver version of http_parser}
+  s.homepage = %q{http://github.com/cantino/twitter-stream}
   s.email = %q{voloko@gmail.com}
 
   s.platform                  = Gem::Platform::RUBY
