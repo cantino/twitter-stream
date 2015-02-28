@@ -6,8 +6,6 @@ require 'http/parser'
 
 module Twitter
   class JSONStream < EventMachine::Connection
-    MAX_LINE_LENGTH = 1024*1024
-
     # network failure reconnections
     NF_RECONNECT_START = 0.25
     NF_RECONNECT_ADD   = 0.25
@@ -115,7 +113,7 @@ module Twitter
     end
 
     def unbind
-      if @state == :stream && !@buffer.empty?
+      if @state == :stream
         parse_stream_line(@buffer.flush)
       end
       schedule_reconnect if @options[:auto_reconnect] && !@gracefully_closed
@@ -202,7 +200,7 @@ module Twitter
       @code    = 0
       @headers = {}
       @state   = :init
-      @buffer  = BufferedTokenizer.new("\r", MAX_LINE_LENGTH)
+      @buffer  = BufferedTokenizer.new("\r")
       @stream  = ''
 
       @parser  = Http::Parser.new
