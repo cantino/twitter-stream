@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.extra_rdoc_files = ["README.markdown", "LICENSE"]
 
-  s.add_runtime_dependency('eventmachine', ">= 0.12.8")
+  s.add_runtime_dependency('eventmachine', "~> 1.0.7")
   s.add_runtime_dependency('simple_oauth', '~> 0.2.0')
   s.add_runtime_dependency('http_parser.rb', '~> 0.5.1')
   s.add_development_dependency('rspec', "~> 2.5.0")
