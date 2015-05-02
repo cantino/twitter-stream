@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README.markdown", "LICENSE"]
 
   s.add_runtime_dependency('eventmachine', "~> 1.0.7")
-  s.add_runtime_dependency('simple_oauth', '~> 0.2.0')
+  s.add_runtime_dependency('simple_oauth', '~> 0.3.0')
   s.add_runtime_dependency('http_parser.rb', '~> 0.6.0')
   s.add_development_dependency('rspec', "~> 2.5.0")
 
