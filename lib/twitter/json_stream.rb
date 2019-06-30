@@ -202,7 +202,9 @@ module Twitter
       @state   = :init
       @buffer  = BufferedTokenizer.new("\r")
       @stream  = ''
+    end
 
+    def reset_parser
       @parser  = Http::Parser.new
       @parser.on_headers_complete = method(:handle_headers_complete)
       @parser.on_body = method(:receive_stream_data)
@@ -235,6 +237,8 @@ module Twitter
     end
 
     def send_request
+      reset_parser
+
       data = []
       request_uri = @options[:path]
 
